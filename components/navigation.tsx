@@ -35,9 +35,9 @@ export function Navigation() {
           <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
             <a href="#hero" className="flex items-center gap-2">
               <div className="h-7 w-7 bg-primary flex items-center justify-center" style={{ transform: "skewX(-8deg)" }}>
-                <span className="font-[var(--font-display)] text-primary-foreground text-xs" style={{ transform: "skewX(8deg)" }}>D</span>
+                <span className="font-(--font-display) text-primary-foreground text-xs" style={{ transform: "skewX(8deg)" }}>D</span>
               </div>
-              <span className="font-[var(--font-display)] text-foreground text-lg tracking-wider uppercase">DEV</span>
+              <span className="font-(--font-display) text-foreground text-lg tracking-wider uppercase">DEV</span>
             </a>
 
             <div className="hidden items-center gap-6 md:flex">
@@ -45,10 +45,10 @@ export function Navigation() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="group relative font-[var(--font-display)] text-sm uppercase tracking-widest text-muted-foreground transition-all duration-300 hover:text-foreground hover:-skew-x-2"
+                  className="group relative font-(--font-display) text-sm uppercase tracking-widest text-muted-foreground transition-all duration-300 hover:text-foreground hover:-skew-x-2"
                 >
                   {link.label}
-                  <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full" />
+                  <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-primary transition-all duration-300 group-hover:w-full" />
                 </a>
               ))}
             </div>
@@ -89,12 +89,12 @@ export function Navigation() {
                       transition={{ delay: 0.1 + i * 0.08 }}
                       className="group flex items-center gap-4"
                     >
-                      <span className="font-[var(--font-display)] text-3xl uppercase tracking-widest text-foreground transition-colors hover:text-primary"
+                      <span className="font-(--font-display) text-3xl uppercase tracking-widest text-foreground transition-colors hover:text-primary"
                         style={{ transform: "skewX(-4deg)" }}
                       >
                         {link.label}
                       </span>
-                      <span className="h-[3px] w-0 bg-primary transition-all duration-300 group-hover:w-12" />
+                      <span className="h-0.75 w-0 bg-primary transition-all duration-300 group-hover:w-12" />
                     </motion.a>
                   ))}
                 </div>
