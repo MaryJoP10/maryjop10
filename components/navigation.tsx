@@ -35,9 +35,9 @@ export function Navigation() {
           <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
             <a href="#hero" className="flex items-center gap-2">
               <div className="h-7 w-7 bg-primary flex items-center justify-center" style={{ transform: "skewX(-8deg)" }}>
-                <span className="font-(--font-display) text-primary-foreground text-xs" style={{ transform: "skewX(8deg)" }}>D</span>
+                <span className="font-(--font-display) text-primary-foreground text-xs" style={{ transform: "skewX(8deg)" }}>S</span>
               </div>
-              <span className="font-(--font-display) text-foreground text-lg tracking-wider uppercase">DEV</span>
+              <span className="font-(--font-display) text-foreground text-lg tracking-wider uppercase">Shana</span>
             </a>
 
             <div className="hidden items-center gap-6 md:flex">
