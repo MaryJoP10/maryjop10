@@ -4,11 +4,11 @@ import { motion, AnimatePresence } from "framer-motion"
 import { useState, useEffect, useCallback } from "react"
 
 const menuItems = [
-  { label: "About", href: "#about" },
-  { label: "Projects", href: "#projects" },
-  { label: "Skills", href: "#skills" },
-  { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
+  { label: "Sobre Mí", href: "#about" },
+  { label: "Habilidades", href: "#skills" },
+  { label: "Proyectos", href: "#project" },
+  { label: "Experiencia", href: "#experience" },
+  { label: "Contacto", href: "#contact" },
 ]
 
 export function HeroSection() {
@@ -226,14 +226,14 @@ export function HeroSection() {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.1 + i * 0.08, duration: 0.4 }}
                       onMouseEnter={() => setActiveIndex(i)}
-                      className={`group relative cursor-pointer px-2 py-1 transition-all duration-300 sm:px-3 ${
+                      className={`group relative cursor-pointer px-2 py-1 transition-all duration-300 sm:px-3 -mt-4 mb-18 ${
                         isActive ? "" : ""
                       }`}
                       onClick={(e) => {
                         e.stopPropagation()
                       }}
                     >
-                      {/* Active item marker — small diamond */}
+                      {/* Diamante arriba al estar el elemento activo */}
                       {isActive && (
                         <motion.div
                           layoutId="menu-marker"
@@ -243,7 +243,7 @@ export function HeroSection() {
                         />
                       )}
 
-                      {/* Label — active is bigger and white, inactive is smaller and muted */}
+                      {/* Elemento texto más grande al estar seleccionado*/}
                       <span
                         className={`font-(--font-display) uppercase transition-all duration-300 block whitespace-nowrap ${
                           isActive
@@ -255,16 +255,16 @@ export function HeroSection() {
                         {item.label}
                       </span>
 
-                      {/* Underline accent on active */}
+                      {/* Subrayado cuando esta activo */}
                       {isActive && (
                         <motion.div
                           layoutId="menu-underline"
-                          className="mt-1 h-[3px] w-full bg-primary"
+                          className="mt-1 h-0.75 w-full bg-primary"
                           transition={{ type: "spring", stiffness: 400, damping: 30 }}
                         />
                       )}
 
-                      {/* Separator dot between items */}
+                      {/* Separador entre elementos */}
                       {i < menuItems.length - 1 && (
                         <span className="absolute -right-1 bottom-1/2 translate-y-1/2 text-muted-foreground/30 sm:-right-1.5 md:-right-2 select-none pointer-events-none" aria-hidden>
                           &#x2716;
@@ -275,33 +275,14 @@ export function HeroSection() {
                 })}
               </div>
 
-              {/* Bottom bar hint — like P5's controller buttons */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.8 }}
-                className="mt-8 flex items-center justify-center gap-6 text-muted-foreground"
-              >
-                <div className="flex items-center gap-2">
-                  <kbd className="inline-flex h-6 items-center justify-center bg-secondary px-2 font-mono text-[10px] uppercase text-muted-foreground">
-                    Scroll
-                  </kbd>
-                  <span className="text-[10px] uppercase tracking-widest">Explore</span>
-                </div>
-                <div className="h-3 w-[1px] bg-border" />
-                <div className="flex items-center gap-2">
-                  <kbd className="inline-flex h-6 items-center justify-center bg-secondary px-2 font-mono text-[10px] uppercase text-muted-foreground">
-                    Click
-                  </kbd>
-                  <span className="text-[10px] uppercase tracking-widest">Select</span>
-                </div>
-              </motion.div>
+              {/* Hints */}
+
             </motion.nav>
           )}
         </AnimatePresence>
       </div>
 
-      {/* Scroll indicator — bottom center */}
+      {/* Indicador de Scroll */}
       <AnimatePresence>
         {showMenu && (
           <motion.div
@@ -313,16 +294,16 @@ export function HeroSection() {
             <motion.div
               animate={{ y: [0, 8, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
-              className="h-8 w-[2px] bg-primary/40"
+              className="h-8 w-0.5 bg-primary/40"
             />
             <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-              Scroll Down
+              Scroll
             </span>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Corner decorative elements */}
+      {/* Decoración de esquinas */}
       <div className="absolute top-6 left-6 h-8 w-8 border-l-2 border-t-2 border-primary/20" />
       <div className="absolute top-6 right-6 h-8 w-8 border-r-2 border-t-2 border-primary/20" />
       <div className="absolute bottom-6 left-6 h-8 w-8 border-l-2 border-b-2 border-primary/20" />
