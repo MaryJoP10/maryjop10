@@ -124,21 +124,21 @@ export function HeroSection() {
           transition={{ delay: 0.5, duration: 0.7, ease: "easeOut" }}
           className="relative text-center"
         >
-          {/* Shadow/offset red layer for depth */}
+          {/* Sombra de título principal */}
           <div className="absolute inset-0 translate-x-1 translate-y-1 md:translate-x-2 md:translate-y-2 select-none pointer-events-none" aria-hidden>
             <div className="font-(--font-display)] text-[4.5rem] leading-[0.85] uppercase text-primary/20 sm:text-[7rem] md:text-[9rem] lg:text-[12rem]">
-              <span className="block">María José</span>
+              <span className="block mb-6">María José</span>
               <span className="block">Peña Ruiz</span>
             </div>
           </div>
 
-          {/* Main title */}
+          {/* Título Principal */}
           <h1 className="relative font-(--font-mono)] text-[4.5rem] leading-[0.85] uppercase text-foreground sm:text-[7rem] md:text-[9rem] lg:text-[12rem]">
             <motion.span
               initial={{ x: -60, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.5 }}
-              className="block"
+              className="block mb-6"
             >
               María José
             </motion.span>
@@ -157,17 +157,22 @@ export function HeroSection() {
             initial={{ scaleX: 0, opacity: 0 }}
             animate={{ scaleX: 1, opacity: 1 }}
             transition={{ delay: 1, duration: 0.5 }}
-            className="mx-auto mt-2 flex origin-center items-center justify-center gap-4"
+            className="mx-auto mt-8 flex items-center justify-center gap-4"
           >
-            <div className="h-[2px] flex-1 bg-primary/40" />
-            <span className="font-[var(--font-display)] text-lg uppercase tracking-[0.5em] text-foreground sm:text-xl md:text-2xl">
-              Full Stack Developer
-            </span>
-            <div className="h-[2px] flex-1 bg-primary/40" />
+            <div className="h-0.5 w-20 bg-primary/40" />
+            <div className="text-center">
+              <span className="block font-(--font-display) text-lg uppercase tracking-[0.5em] sm:text-xl md:text-2xl">
+                Desarrolladora de Software &
+              </span>
+              <span className="block font-(--font-display) text-lg uppercase tracking-[0.5em] sm:text-xl md:text-2xl">
+                Analista de Datos
+              </span>
+            </div>
+            <div className="h-0.5 w-20 bg-primary/40" />
           </motion.div>
         </motion.div>
 
-        {/* "Press any button" prompt — like P5 title screen */}
+        {/* Prompt para inicio con Click */}
         <AnimatePresence>
           {showPrompt && (
             <motion.div
@@ -175,24 +180,24 @@ export function HeroSection() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0, y: 20 }}
               transition={{ delay: 1.5, duration: 0.5 }}
-              className="mt-16 md:mt-24"
+              className="mt-16 md:mt-14"
             >
               <motion.div
                 animate={{ opacity: [1, 0.4, 1] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                 className="relative"
               >
-                {/* Skewed ribbon background like P5's "Press Any Button" */}
+                {/* Botón */}
                 <div
                   className="relative px-8 py-3"
                   style={{ transform: "skewX(-8deg)" }}
                 >
                   <div className="absolute inset-0 bg-primary/90" />
                   <span
-                    className="relative font-[var(--font-display)] text-sm uppercase tracking-[0.3em] text-primary-foreground sm:text-base"
+                    className="relative font-(--font-display) text-sm uppercase tracking-[0.3em] text-primary-foreground sm:text-base"
                     style={{ transform: "skewX(8deg)", display: "inline-block" }}
                   >
-                    Click to Start
+                    Click para Empezar
                   </span>
                 </div>
               </motion.div>
@@ -200,7 +205,7 @@ export function HeroSection() {
           )}
         </AnimatePresence>
 
-        {/* Game menu — horizontal, P5-style with selected item larger */}
+        {/* Menú horizontal, después de iniciar (dar click) */}
         <AnimatePresence>
           {showMenu && (
             <motion.nav
