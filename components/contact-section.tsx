@@ -2,12 +2,12 @@
 
 import { motion } from "framer-motion"
 import { useState } from "react"
-import { Send, Mail, MapPin, Github, Linkedin, Twitter } from "lucide-react"
+import { Send, Mail, MapPin, Github, Linkedin, Twitter, Instagram } from "lucide-react"
 
 const socialLinks = [
-  { name: "GitHub", icon: Github, href: "https://github.com" },
-  { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com" },
-  { name: "Twitter", icon: Twitter, href: "https://twitter.com" },
+  { name: "GitHub", icon: Github, href: "https://github.com/MaryJoP10" },
+  { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com/in/maryjop10/" },
+  { name: "Instagram", icon: Instagram, href: "https://instagram.com/maryjop10" },
 ]
 
 export function ContactSection() {
@@ -20,10 +20,17 @@ export function ContactSection() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setIsSubmitting(true)
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-    setIsSubmitting(false)
+    
+    // 1. Configura tu número aquí (formato internacional sin el +)
+    // Ejemplo para Colombia: "573001234567"
+    const phoneNumber = "573332808002" 
+    
+    // 2. Creamos el mensaje formateado
+    const text = `*Nuevo mensaje de contacto*\n\n*Nombre:* ${formState.name}\n*Email:* ${formState.email}\n\n*Mensaje:* ${formState.message}`
+    
+    // 3. Abrimos WhatsApp en una nueva pestaña
+    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`, '_blank')
+    
     setFormState({ name: "", email: "", message: "" })
   }
 
@@ -44,7 +51,7 @@ export function ContactSection() {
           whileInView={{ x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="absolute right-0 bottom-[10%] h-[40%] w-[25%] bg-primary/[0.03]"
+          className="absolute right-0 bottom-[10%] h-[40%] w-[25%] bg-primary/3"
           style={{ clipPath: "polygon(15% 0, 100% 0, 100% 100%, 0% 100%)" }}
         />
         {/* Diagonal lines */}
@@ -131,7 +138,7 @@ export function ContactSection() {
                     Email
                   </span>
                   <span className="font-(--font-display) text-lg text-foreground group-hover:text-primary transition-colors">
-                    hola@shana.dev
+                    consulshanis@gmail.com
                   </span>
                 </div>
               </motion.a>
@@ -154,7 +161,7 @@ export function ContactSection() {
                     Ubicación
                   </span>
                   <span className="font-(--font-display) text-lg text-foreground">
-                    Ciudad de México, MX
+                    Medellín, COL
                   </span>
                 </div>
               </motion.div>
