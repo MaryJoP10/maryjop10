@@ -1,39 +1,26 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #1a1a2e;
-  --card: #ffffff;
-  --card-foreground: #1a1a2e;
-  --popover: #ffffff;
-  --popover-foreground: #1a1a2e;
-  --primary: #e63946;
-  --primary-foreground: #ffffff;
-  --secondary: #ffd166;
-  --secondary-foreground: #1a1a2e;
-  --muted: #f8f9fa;
-  --muted-foreground: #6c757d;
-  --accent: #06d6a0;
-  --accent-foreground: #1a1a2e;
-  --destructive: #e63946;
-  --destructive-foreground: #ffffff;
-  --border: #dee2e6;
-  --input: #f8f9fa;
-  --ring: #e63946;
-  --chart-1: #e63946;
-  --chart-2: #ffd166;
-  --chart-3: #06d6a0;
-  --chart-4: #118ab2;
-  --chart-5: #073b4c;
-  --radius: 0rem;
-  --sidebar: #1a1a2e;
-  --sidebar-foreground: #ffffff;
-  --sidebar-primary: #e63946;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #ffd166;
-  --sidebar-accent-foreground: #1a1a2e;
-  --sidebar-border: #2d2d44;
-  --sidebar-ring: #e63946;
+  --background: #FFFBEB;
+  --foreground: #1A1A1A;
+
+  --card: #FFFFFF;
+  --card-foreground: #1A1A1A;
+
+  --primary: #FACC15;
+  --primary-foreground: #1A1A1A;
+
+  --secondary: #FEF3C7;
+  --secondary-foreground: #92400E;
+
+  --accent: #FDE68A;
+  --accent-foreground: #1A1A1A;
+
+  --muted: #FFF7CC;
+  --muted-foreground: #777777;
+
+  --border: #FDE68A;
+  --ring: #FACC15;
 }
 
 @theme inline {
