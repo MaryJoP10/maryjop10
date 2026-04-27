@@ -30,8 +30,8 @@ export function HeroSection() {
   }, [handleStart])
 
   return (
-    <section
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden cursor-pointer select-none"
+<section
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden cursor-pointer select-none bg-background"
       id="hero"
       onClick={handleStart}
     >
@@ -124,21 +124,21 @@ export function HeroSection() {
           transition={{ delay: 0.5, duration: 0.7, ease: "easeOut" }}
           className="relative text-center"
         >
-          {/* Sombra de título principal */}
+{/* Sombra de título principal */}
           <div className="absolute inset-0 translate-x-1 translate-y-1 md:translate-x-2 md:translate-y-2 select-none pointer-events-none" aria-hidden>
-            <div className="font-(--font-display)] text-[4.5rem] leading-[0.85] uppercase text-primary/20 sm:text-[7rem] md:text-[9rem] lg:text-[12rem]">
-              <span className="block mb-6">María José</span>
-              <span className="block">Peña Ruiz</span>
+            <div className="font-(--font-display)] leading-[0.85] uppercase text-primary/20">
+              <span className="block text-[3rem] sm:text-[5rem] md:text-[6rem] lg:text-[8rem] mb-2">María José</span>
+              <span className="block text-[1.5rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[4rem]">Peña Ruiz</span>
             </div>
           </div>
 
           {/* Título Principal */}
-          <h1 className="relative font-(--font-mono)] text-[4.5rem] leading-[0.85] uppercase text-foreground sm:text-[7rem] md:text-[9rem] lg:text-[12rem]">
+          <h1 className="relative font-(--font-mono)] leading-[0.85] uppercase text-foreground">
             <motion.span
               initial={{ x: -60, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.5 }}
-              className="block mb-6"
+              className="block text-[3rem] sm:text-[5rem] md:text-[6rem] lg:text-[8rem] mb-2"
             >
               María José
             </motion.span>
@@ -146,7 +146,7 @@ export function HeroSection() {
               initial={{ x: 60, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ delay: 0.75, duration: 0.5 }}
-              className="block text-primary"
+              className="block text-[1.5rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[4rem] text-primary/80"
             >
               Peña Ruiz
             </motion.span>
@@ -250,7 +250,7 @@ export function HeroSection() {
                             ? "text-xl text-foreground sm:text-2xl md:text-3xl -skew-x-3"
                             : "text-sm text-muted-foreground sm:text-base md:text-lg opacity-60 hover:opacity-90"
                         }`}
-                        style={isActive ? { textShadow: "2px 2px 0px rgba(227,6,19,0.3)" } : {}}
+                        style={isActive ? { textShadow: "2px 2px 0px var(--primary)" } : {}}
                       >
                         {item.label}
                       </span>

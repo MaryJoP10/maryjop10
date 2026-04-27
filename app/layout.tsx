@@ -7,8 +7,8 @@ const _geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono
 const _anton = Anton({ weight: "400", subsets: ["latin"], variable: "--font-anton" });
 
 export const metadata: Metadata = {
-  title: "MaryJoP10's Portfolio",
-  description: 'Portalio de Desrrolladora y Analista',
+  title: "Shana | Desarrolladora & Analista de Datos",
+  description: 'Portfolio de María José Peña Ruiz - Desarrolladora de Software y Analista de Datos. Transformando ideas en experiencias digitales extraordinarias.',
 }
 
 export default function RootLayout({
@@ -17,10 +17,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="es" className="bg-background">
       <body className={`${_inter.variable} ${_geistMono.variable} ${_anton.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>
   )
 }
+
