@@ -108,7 +108,7 @@ export function ProjectsSection() {
           <div className="flex items-center gap-4 mb-4">
             <div className="h-0.5 w-12 bg-primary" />
             <span className="font-mono text-xs uppercase tracking-[0.3em] text-primary">
-              03 // Proyectos
+              01 // Proyectos
             </span>
           </div>
           <div className="relative">

@@ -13,8 +13,8 @@ export default function Home() {
   return (
     <>
       <Navigation />
+      <HeroSection />
       <main>
-        <HeroSection />
         <ProjectsSection />
         <AboutSection />
         <SkillsSection />

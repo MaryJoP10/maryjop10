@@ -1,10 +1,10 @@
-import type { Metadata, Viewport } from 'next'
+import type { Metadata } from 'next'
 import { Inter, Geist_Mono, Anton } from 'next/font/google'
 import './globals.css'
 
-const _inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const _geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" });
-const _anton = Anton({ weight: "400", subsets: ["latin"], variable: "--font-anton" });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" });
+const anton = Anton({ weight: "400", subsets: ["latin"], variable: "--font-anton" });
 
 export const metadata: Metadata = {
   title: "Shana | Desarrolladora & Analista de Datos",
@@ -18,10 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className="bg-background">
-      <body className={`${_inter.variable} ${_geistMono.variable} ${_anton.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} ${geistMono.variable} ${anton.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>
   )
 }
-
