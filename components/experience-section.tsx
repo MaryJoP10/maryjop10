@@ -7,54 +7,65 @@ import { useState } from "react"
 const experiences = [
   {
     type: "work",
-    title: "Desarrolladora Full Stack",
-    company: "Tech Solutions Inc.",
-    period: "2023 - Presente",
+    title: "Desarrolladora Full Stack Y Analista de Datos ",
+    company: " Freelance / Independiente",
+    period: " Oct 2025 – Presente",
     description:
-      "Desarrollo de aplicaciones web escalables utilizando React, Node.js y PostgreSQL. Liderazgo técnico en proyectos de transformación digital.",
-    highlights: ["Liderazgo técnico", "Arquitectura de sistemas", "Mentoring"],
+      "Desarrollo de aplicaciones web con React, Node.js y Angular, integrando APIs y bases de datos. También diseño soluciones basadas en datos, aplicando análisis e inteligencia artificial para optimizar procesos y apoyar la toma de decisiones.",
+    highlights: ["React JS", "Node JS", "SQL", "Git", "JavaScript", "TypeScript", "Bases de Datos", "Análisis de Datos", "Frontend", "Backend"],
   },
   {
     type: "work",
-    title: "Analista de Datos",
-    company: "Data Insights Co.",
-    period: "2021 - 2023",
+    title: "Practicante TI / Analista TI",
+    company: " Tuya S.A",
+    period: "Ene 2025 – Jul 2025",
     description:
-      "Análisis de datos empresariales y creación de dashboards interactivos. Implementación de modelos predictivos para toma de decisiones.",
-    highlights: ["Business Intelligence", "Machine Learning", "Visualización"],
+      "Análisis financiero y operativo con SAS, automatización de reportes en Excel y gestión de activos e inventarios tecnológicos mediante ServiceNow, apoyando la mejora continua de procesos TI.",
+    highlights: ["Análisis de Datos", "SAS", "Excel", "ServiceNow", "Automatización", "Gestión de Inventarios"],
   },
   {
     type: "work",
-    title: "Desarrolladora Junior",
-    company: "StartUp Digital",
-    period: "2020 - 2021",
+    title: "Monitora Académica",
+    company: "Universidad Pontificia Bolivariana",
+    period: "Jul 2020 – Nov 2023",
     description:
-      "Desarrollo frontend con React y colaboración en proyectos de backend con Python. Participación en ciclos ágiles de desarrollo.",
-    highlights: ["React", "Python", "Metodologías ágiles"],
+      "Docencia en programación, matemáticas (cálculo, geometría) y física. ",
+    highlights: ["Tutoria", "Matemáticas", "Física", "Lenguajes de Programación", "Trabajo en Equipo"],
+  },
+  {
+    type: "work",
+    title: "Asistente Administrativo y Desarrollo Web",
+    company: "Wind Hill Growers",
+    period: "Ene 2022 - Feb 2022",
+    description:
+      "Mantenimiento de sitio web corporativo en WordPress y apoyo administrativo.",
+    highlights: ["WordPress", "Figma", "Metodologías ágiles"],
   },
 ]
 
 const education = [
   {
     type: "education",
-    title: "Ingeniería en Sistemas Computacionales",
-    institution: "Universidad Tecnológica",
-    period: "2016 - 2020",
-    description: "Especialización en desarrollo de software y ciencia de datos. Proyecto de tesis en Machine Learning aplicado.",
+    title: "Ingeniería de Sistemas e Informática",
+    institution: "Universidad Pontificia Bolivariana",
+    period: "2020 – 2025",
+    description: "Pregrado en Ingeniería de Sistemas e Informática",
   },
   {
     type: "education",
-    title: "Certificación en Data Science",
-    institution: "Google / Coursera",
-    period: "2022",
-    description: "Programa profesional de análisis de datos, visualización y machine learning.",
+    title: "Bachiller Académico",
+    institution: "Colegio Alemán de Medellín",
+    period: " 2006 – 2019",
+    description: "Bachillerato.",
   },
 ]
 
 const certifications = [
-  { name: "AWS Certified Developer", issuer: "Amazon Web Services", year: "2023" },
-  { name: "React Advanced Certification", issuer: "Meta", year: "2022" },
-  { name: "Python Data Science", issuer: "IBM", year: "2021" },
+  { name: "Generación IA", issuer: "Microsoft & Eidos Global", year: "2025" },
+  { name: "Análisis de Datos", issuer: "LinkedIn", year: "2025" },
+  { name: "ReactJS Course", issuer: " Udemy", year: "2024" },
+  { name: "Ciencia de Datos con Python", issuer: "Sapiencia", year: "2023" },
+  { name: "Internet de las Cosas", issuer: "Universidad de Medellín", year: "2018" },
 ]
 
 type TabType = "work" | "education" | "certs"
@@ -85,7 +96,7 @@ export function ExperienceSection() {
           whileInView={{ x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="absolute left-0 bottom-[15%] h-[35%] w-[20%] bg-primary/[0.03]"
+          className="absolute left-0 bottom-[15%] h-[35%] w-[20%] bg-primary/3"
           style={{ clipPath: "polygon(0 15%, 100% 0, 80% 100%, 0% 100%)" }}
         />
         {/* Vertical line */}

@@ -25,11 +25,11 @@ export function Footer() {
       {/* Background elements */}
       <div className="absolute inset-0">
         <div
-          className="absolute left-0 top-0 h-full w-[20%] bg-primary/[0.02]"
+          className="absolute left-0 top-0 h-full w-[20%] bg-primary/2"
           style={{ clipPath: "polygon(0 0, 100% 0, 70% 100%, 0% 100%)" }}
         />
         <div
-          className="absolute right-0 bottom-0 h-full w-[15%] bg-primary/[0.02]"
+          className="absolute right-0 bottom-0 h-full w-[15%] bg-primary/2"
           style={{ clipPath: "polygon(30% 0, 100% 0, 100% 100%, 0% 100%)" }}
         />
       </div>
