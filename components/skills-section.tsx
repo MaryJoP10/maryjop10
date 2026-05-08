@@ -8,43 +8,54 @@ const skillCategories = [
     name: "Frontend",
     code: "FE",
     skills: [
-      { name: "React", level: 95 },
-      { name: "Next.js", level: 90 },
-      { name: "TypeScript", level: 88 },
-      { name: "Tailwind CSS", level: 92 },
-      { name: "Vue.js", level: 75 },
+      { name: "React", level: 85 },
+      { name: "Next.js", level: 80 },
+      { name: "JavaScript/TypeScript", level: 80 },
+      { name: "HTML/CSS/Tailwind CSS", level: 90 },
+      { name: "Angular", level: 75 },
     ],
   },
   {
     name: "Backend",
     code: "BE",
     skills: [
-      { name: "Node.js", level: 85 },
-      { name: "Python", level: 90 },
-      { name: "PostgreSQL", level: 82 },
-      { name: "MongoDB", level: 78 },
-      { name: "GraphQL", level: 72 },
+      { name: "Node.js", level: 80 },
+      { name: "Python", level: 80 },
+      { name: "APIs REST", level: 85 },
+      { name: "Java/Spring Boot", level: 80 },
+      { name: ".NET/C#", level: 65 },
     ],
   },
   {
     name: "Data Analysis",
     code: "DA",
     skills: [
-      { name: "Python/Pandas", level: 92 },
-      { name: "SQL", level: 88 },
-      { name: "Power BI", level: 85 },
-      { name: "Tableau", level: 80 },
+      { name: "Python/Pandas", level: 85 },
+      { name: "SQL", level: 85 },
+      { name: "Power BI", level: 75 },
+      { name: "Excel", level: 85 },
+      { name: "SAS", level: 70 },
+    ],
+  },
+  {
+    name: "Artificial Intelligence",
+    code: "AI",
+    skills: [
       { name: "Machine Learning", level: 70 },
+      { name: "Prompt Engineering", level: 80 },
+      { name: "LLM tools", level: 85 },
+      { name: "Automation with AI", level: 75 },
+      { name: "Data-driven solutions", level: 80 },
     ],
   },
   {
     name: "Tools & Others",
     code: "TO",
     skills: [
-      { name: "Git/GitHub", level: 90 },
+      { name: "Git/GitHub", level: 95 },
       { name: "Docker", level: 75 },
       { name: "AWS", level: 70 },
-      { name: "Figma", level: 82 },
+      { name: "Figma", level: 75 },
       { name: "Agile/Scrum", level: 85 },
     ],
   },
@@ -204,7 +215,7 @@ export function SkillsSection() {
                       delay: 0.3 + i * 0.15, 
                       ease: [0.25, 0.46, 0.45, 0.94]
                     }}
-                    className="absolute inset-y-0 left-0 bg-gradient-to-r from-primary to-secondary"
+                    className="absolute inset-y-0 left-0 bg-linear-to-r from-primary to-secondary"
                     style={{ clipPath: "polygon(0 0, 100% 0, calc(100% - 8px) 100%, 0 100%)" }}
                   />
                   {/* Animated shine effect */}
@@ -212,7 +223,7 @@ export function SkillsSection() {
                     initial={{ x: "-100%" }}
                     animate={isInView ? { x: "300%" } : { x: "-100%" }}
                     transition={{ duration: 1.8, delay: 1.2 + i * 0.15, repeat: Infinity, repeatDelay: 4 }}
-                    className="absolute inset-y-0 w-1/4 bg-gradient-to-r from-transparent via-white/40 to-transparent"
+                    className="absolute inset-y-0 w-1/4 bg-linear-to-r from-transparent via-white/40 to-transparent"
                   />
                   {/* Progress tick marks */}
                   <div className="absolute inset-0 flex">
