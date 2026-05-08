@@ -4,9 +4,9 @@ import { motion } from "framer-motion"
 import { Code2, Database, Sparkles } from "lucide-react"
 
 const stats = [
-  { value: "3+", label: "Años de Experiencia" },
-  { value: "20+", label: "Proyectos Completados" },
-  { value: "15+", label: "Tecnologías Dominadas" },
+  { value: "Desarrollo Full Stack", label: "Misión 1" },
+  { value: "Datos y Analítica", label: "Misión 2" },
+  { value: "IA y Automatización", label: "Misión 3" },
 ]
 
 const highlights = [
@@ -33,7 +33,7 @@ export function AboutSection() {
           whileInView={{ x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="absolute right-0 bottom-[5%] h-[40%] w-[25%] bg-primary/[0.03]"
+          className="absolute right-0 bottom-[5%] h-[40%] w-[25%] bg-primary/3"
           style={{ clipPath: "polygon(20% 0, 100% 0, 100% 100%, 0% 100%)" }}
         />
         {/* Diagonal lines */}
@@ -109,8 +109,8 @@ export function AboutSection() {
                 soluciones tecnológicas innovadoras que transforman ideas en realidad.
               </p>
               <p className="font-sans text-lg leading-relaxed text-muted-foreground mb-6">
-                Mi enfoque combina el pensamiento analítico con la creatividad, permitiéndome
-                desarrollar aplicaciones robustas y extraer insights valiosos de los datos.
+                Mi enfoque integra pensamiento analítico, creatividad y experiencia de usuario 
+                para construir aplicaciones funcionales, escalables y orientadas a datos.
               </p>
               <p className="font-sans text-lg leading-relaxed text-muted-foreground">
                 Siempre en búsqueda de nuevos desafíos y oportunidades para aprender y crecer
@@ -196,7 +196,7 @@ export function AboutSection() {
               className="relative"
             >
               <div
-                className="relative bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/30 p-8"
+                className="relative bg-linear-to-br from-primary/20 to-primary/5 border border-primary/30 p-8"
                 style={{ clipPath: "polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 30px 100%, 0 calc(100% - 30px))" }}
               >
                 <div className="flex items-center gap-4 mb-4">
@@ -216,7 +216,7 @@ export function AboutSection() {
                   </div>
                 </div>
                 <p className="font-mono text-sm text-muted-foreground italic">
-                  {'"Transformando el mundo digital, una línea de código a la vez."'}
+                  {'"Construyendo soluciones digitales impulsadas por datos, creatividad e inteligencia artificial."'}
                 </p>
 
                 {/* Decorative diamonds */}
