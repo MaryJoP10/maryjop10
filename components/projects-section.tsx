@@ -1,7 +1,8 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import { useState } from "react"
+import Image from "next/image"
 import { ExternalLink, Github, ChevronLeft, ChevronRight } from "lucide-react"
 
 const projects = [
@@ -12,7 +13,7 @@ const projects = [
     description:
       "Portafolio interactivo inspirado en interfaces gaming, desarrollado para mostrar proyectos, habilidades y experiencia mediante una experiencia visual moderna y dinámica.",
     tags: ["Next.js", "TypeScript/JavaScript", "Framer Motion", "TailwindCSS"],
-    image: "../images/portfolio.png",
+    image: "/images/portfolio.png", // Asegúrate de que el archivo en public/images/ se llame así
     liveUrl: "https://maryjop10.vercel.app/",
     githubUrl: "https://github.com/MaryJoP10/maryjop10",
     status: "Completado",
@@ -25,9 +26,9 @@ const projects = [
     description:
       "Desarrollo de plataforma web orientada a networking y búsqueda de empleo, integrando autenticación, APIs REST y base de datos para gestión de usuarios y publicaciones.",
     tags: ["Next.js", "TypeScript", "Node.js","REST API", "Supabase", "SQL"],
-    image: "../images/Wanted.png",
+    image: "/images/Wanted.png",
     liveUrl: "https://www.wantedcolombia.com/",
-    githubUrl: "null",
+    githubUrl: "#",
     status: "Completado",
     featured: true,
   },
@@ -38,7 +39,7 @@ const projects = [
     description:
       "Aplicativo móvil orientado al análisis de inventario y control presupuestario mediante visualización y procesamiento de datos para optimizar recursos y apoyar la toma de decisiones.",
     tags: ["Flutter", "Firebase", "Dart",],
-    image: "../images/Building.png",
+    image: "/images/Building.png",
     liveUrl: "#",
     githubUrl: "#",
     status: "En desarrollo",
@@ -51,7 +52,7 @@ const projects = [
     description:
       "Aplicación móvil diseñada para apoyar a emprendedores mediante una experiencia visual e intuitiva para la gestión de ventas, inventario y cuentas. El proyecto está enfocado en accesibilidad y usabilidad, facilitando la interacción mediante interfaces simples y adaptadas.",
     tags: ["React Native", "Expo", "TypeScript", "Excel Sheets"],
-    image: "../images/Building.png",
+    image: "/images/Building.png",
     liveUrl: "#",
     githubUrl: "#",
     status: "En desarrollo",
@@ -220,28 +221,24 @@ export function ProjectsSection() {
                 className="relative aspect-video bg-card border border-border overflow-hidden"
                 style={{ clipPath: "polygon(0 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%)" }}
               >
-                {/* Project preview placeholder */}
-                <motion.div
-                  key={activeProject}
-                  initial={{ opacity: 0, scale: 1.1 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5 }}
-                  className="absolute inset-0 bg-linear-to-br from-primary/20 via-card to-primary/10 flex items-center justify-center"
-                >
-                  <div className="text-center">
-                    <div
-                      className="h-16 w-16 mx-auto mb-4 bg-primary/20 flex items-center justify-center"
-                      style={{ clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)" }}
-                    >
-                      <span className="font-(--font-display) text-2xl text-primary">
-                        {String(activeProject + 1).padStart(2, "0")}
-                      </span>
-                    </div>
-                    <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
-                      Preview
-                    </span>
-                  </div>
-                </motion.div>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeProject}
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.4 }}
+            className="absolute inset-0 h-full w-full"
+          >
+            <Image
+              src={featuredProjects[activeProject].image}
+              alt={featuredProjects[activeProject].title}
+              fill
+              className="object-cover"
+              priority
+            />
+          </motion.div>
+        </AnimatePresence>
 
                 {/* Corner accents */}
                 <div className="absolute top-4 left-4 h-6 w-6 border-l-2 border-t-2 border-primary/40" />
