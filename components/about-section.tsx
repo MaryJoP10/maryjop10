@@ -13,6 +13,7 @@ const highlights = [
   { icon: Code2, text: "Desarrollo Full Stack" },
   { icon: Database, text: "Análisis de Datos" },
   { icon: Sparkles, text: "Soluciones Creativas" },
+  { icon: Sparkles, text: "Automatización" },
 ]
 
 export function AboutSection() {
@@ -172,7 +173,7 @@ export function AboutSection() {
                     style={{ clipPath: "polygon(0 8px, 8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%)" }}
                   >
                     <span
-                      className="block font-(--font-display) text-4xl text-primary sm:text-5xl"
+                      className="block font-(--font-display) text-primary"
                       style={{ transform: "skewX(-3deg)" }}
                     >
                       {stat.value}
