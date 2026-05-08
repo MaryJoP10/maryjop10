@@ -12,7 +12,7 @@ const projects = [
     description:
       "Portafolio interactivo inspirado en interfaces gaming, desarrollado para mostrar proyectos, habilidades y experiencia mediante una experiencia visual moderna y dinámica.",
     tags: ["Next.js", "TypeScript/JavaScript", "Framer Motion", "TailwindCSS"],
-    image: "/images/portfolio.png",
+    image: "../images/portfolio.png",
     liveUrl: "https://maryjop10.vercel.app/",
     githubUrl: "https://github.com/MaryJoP10/maryjop10",
     status: "Completado",
@@ -25,7 +25,7 @@ const projects = [
     description:
       "Desarrollo de plataforma web orientada a networking y búsqueda de empleo, integrando autenticación, APIs REST y base de datos para gestión de usuarios y publicaciones.",
     tags: ["Next.js", "TypeScript", "Node.js","REST API", "Supabase", "SQL"],
-    image: "/images/Wanted.png",
+    image: "../images/Wanted.png",
     liveUrl: "https://www.wantedcolombia.com/",
     githubUrl: "null",
     status: "Completado",
@@ -38,7 +38,7 @@ const projects = [
     description:
       "Aplicativo móvil orientado al análisis de inventario y control presupuestario mediante visualización y procesamiento de datos para optimizar recursos y apoyar la toma de decisiones.",
     tags: ["Flutter", "Firebase", "Dart",],
-    image: "/images/Building.png",
+    image: "../images/Building.png",
     liveUrl: "#",
     githubUrl: "#",
     status: "En desarrollo",
@@ -51,11 +51,11 @@ const projects = [
     description:
       "Aplicación móvil diseñada para apoyar a emprendedores mediante una experiencia visual e intuitiva para la gestión de ventas, inventario y cuentas. El proyecto está enfocado en accesibilidad y usabilidad, facilitando la interacción mediante interfaces simples y adaptadas.",
     tags: ["React Native", "Expo", "TypeScript", "Excel Sheets"],
-    image: "/images/Building.png",
+    image: "../images/Building.png",
     liveUrl: "#",
     githubUrl: "#",
     status: "En desarrollo",
-    featured: false,
+    featured: true,
   },
 ]
 
