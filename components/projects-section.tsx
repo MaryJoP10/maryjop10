@@ -7,50 +7,54 @@ import { ExternalLink, Github, ChevronLeft, ChevronRight } from "lucide-react"
 const projects = [
   {
     id: 1,
-    title: "Dashboard Analytics",
-    category: "Data Analysis",
+    title: "Portafolio Personal",
+    category: "Frontend",
     description:
-      "Panel de control interactivo para visualización de datos empresariales con gráficos en tiempo real y reportes automatizados.",
-    tags: ["React", "D3.js", "Python", "PostgreSQL"],
-    image: "/placeholder-project-1.jpg",
-    liveUrl: "#",
-    githubUrl: "#",
+      "Portafolio interactivo inspirado en interfaces gaming, desarrollado para mostrar proyectos, habilidades y experiencia mediante una experiencia visual moderna y dinámica.",
+    tags: ["Next.js", "TypeScript/JavaScript", "Framer Motion", "TailwindCSS"],
+    image: "/images/portfolio.png",
+    liveUrl: "https://maryjop10.vercel.app/",
+    githubUrl: "https://github.com/MaryJoP10/maryjop10",
+    status: "Completado",
     featured: true,
   },
   {
     id: 2,
-    title: "E-Commerce Platform",
+    title: "Plataforma de Networking y Empleo",
     category: "Full Stack",
     description:
-      "Plataforma de comercio electrónico completa con carrito de compras, pagos integrados y panel de administración.",
-    tags: ["Next.js", "TypeScript", "Stripe", "MongoDB"],
-    image: "/placeholder-project-2.jpg",
-    liveUrl: "#",
-    githubUrl: "#",
+      "Desarrollo de plataforma web orientada a networking y búsqueda de empleo, integrando autenticación, APIs REST y base de datos para gestión de usuarios y publicaciones.",
+    tags: ["Next.js", "TypeScript", "Node.js","REST API", "Supabase", "SQL"],
+    image: "/images/Wanted.png",
+    liveUrl: "https://www.wantedcolombia.com/",
+    githubUrl: "null",
+    status: "Completado",
     featured: true,
   },
   {
     id: 3,
-    title: "ML Price Predictor",
-    category: "Machine Learning",
+    title: "Sistema de Análisis y Gestión Presupuestaria",
+    category: "Data & Analytics & Mobile",
     description:
-      "Sistema de predicción de precios utilizando algoritmos de machine learning para el mercado inmobiliario.",
-    tags: ["Python", "TensorFlow", "Pandas", "FastAPI"],
-    image: "/placeholder-project-3.jpg",
+      "Aplicativo móvil orientado al análisis de inventario y control presupuestario mediante visualización y procesamiento de datos para optimizar recursos y apoyar la toma de decisiones.",
+    tags: ["Flutter", "Firebase", "Dart",],
+    image: "/images/Building.png",
     liveUrl: "#",
     githubUrl: "#",
+    status: "En desarrollo",
     featured: true,
   },
   {
     id: 4,
-    title: "Task Management App",
-    category: "Frontend",
+    title: "Aplicación Inclusiva para Gestión de Emprendimientos",
+    category: "Mobile & Full Stack",
     description:
-      "Aplicación de gestión de tareas con funcionalidades de drag & drop, filtros avanzados y colaboración en equipo.",
-    tags: ["React", "Redux", "Node.js", "Socket.io"],
-    image: "/placeholder-project-4.jpg",
+      "Aplicación móvil diseñada para apoyar a emprendedores mediante una experiencia visual e intuitiva para la gestión de ventas, inventario y cuentas. El proyecto está enfocado en accesibilidad y usabilidad, facilitando la interacción mediante interfaces simples y adaptadas.",
+    tags: ["React Native", "Expo", "TypeScript", "Excel Sheets"],
+    image: "/images/Building.png",
     liveUrl: "#",
     githubUrl: "#",
+    status: "En desarrollo",
     featured: false,
   },
 ]
@@ -76,7 +80,7 @@ export function ProjectsSection() {
           whileInView={{ x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="absolute left-0 top-[20%] h-[45%] w-[40%] bg-primary/[0.04]"
+          className="absolute left-0 top-[20%] h-[45%] w-[40%] bg-primary/4"
           style={{ clipPath: "polygon(0 10%, 100% 0, 85% 100%, 0% 90%)" }}
         />
         <motion.div
@@ -142,6 +146,10 @@ export function ProjectsSection() {
                 </span>
                 <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
                   {featuredProjects[activeProject].category}
+                </span>
+                <div className="h-1 w-1 rounded-full bg-primary/50" />
+                <span className="font-mono text-xs uppercase tracking-wider text-primary">
+                  {featuredProjects[activeProject].status}
                 </span>
               </div>
 
@@ -218,7 +226,7 @@ export function ProjectsSection() {
                   initial={{ opacity: 0, scale: 1.1 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5 }}
-                  className="absolute inset-0 bg-gradient-to-br from-primary/20 via-card to-primary/10 flex items-center justify-center"
+                  className="absolute inset-0 bg-linear-to-br from-primary/20 via-card to-primary/10 flex items-center justify-center"
                 >
                   <div className="text-center">
                     <div
@@ -303,7 +311,7 @@ export function ProjectsSection() {
                 style={{ clipPath: "polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%)" }}
               >
                 <span className="font-mono text-xs text-primary mb-2 block">
-                  [{String(i + 1).padStart(2, "0")}]
+                  [{String(i + 1).padStart(2, "0")}] // {project.status}
                 </span>
                 <h4
                   className="font-(--font-display) text-lg uppercase text-foreground mb-2 group-hover:text-primary transition-colors"

@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Code2, Database, Sparkles } from "lucide-react"
+import { Code2, Cog, Database, Sparkles } from "lucide-react"
 
 const stats = [
   { value: "Desarrollo Full Stack", label: "Misión 1" },
@@ -13,7 +13,7 @@ const highlights = [
   { icon: Code2, text: "Desarrollo Full Stack" },
   { icon: Database, text: "Análisis de Datos" },
   { icon: Sparkles, text: "Soluciones Creativas" },
-  { icon: Sparkles, text: "Automatización" },
+  { icon: Cog, text: "Automatización" },
 ]
 
 export function AboutSection() {
