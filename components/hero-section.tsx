@@ -6,7 +6,7 @@ import { useState, useEffect, useCallback } from "react"
 const menuItems = [
   { label: "Sobre Mí", href: "#about" },
   { label: "Habilidades", href: "#skills" },
-  { label: "Proyectos", href: "#project" },
+  { label: "Proyectos", href: "#projects" },
   { label: "Experiencia", href: "#experience" },
   { label: "Contacto", href: "#contact" },
 ]
