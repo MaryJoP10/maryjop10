@@ -125,15 +125,15 @@ export function HeroSection() {
           className="relative text-center"
         >
 {/* Sombra de título principal */}
-          <div className="absolute inset-0 translate-x-1 translate-y-1 md:translate-x-2 md:translate-y-2 select-none pointer-events-none" aria-hidden>
-            <div className="font-(--font-display)] leading-[0.85] uppercase text-primary/20">
+          <div className="absolute inset-0 translate-x-[2px] translate-y-[2px] md:translate-x-[4px] md:translate-y-[4px] select-none pointer-events-none" aria-hidden>
+            <div className="font-(--font-display) leading-[0.85] uppercase text-primary/20">
               <span className="block text-[3rem] sm:text-[5rem] md:text-[6rem] lg:text-[8rem] mb-2">María José</span>
               <span className="block text-[1.5rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[4rem]">Peña Ruiz</span>
             </div>
           </div>
 
           {/* Título Principal */}
-          <h1 className="relative font-(--font-mono)] leading-[0.85] uppercase text-foreground">
+          <h1 className="relative font-(--font-display) leading-[0.85] uppercase text-foreground">
             <motion.span
               initial={{ x: -60, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
@@ -215,7 +215,7 @@ export function HeroSection() {
               className="mt-12 md:mt-20"
               aria-label="Main menu"
             >
-              <div className="flex flex-wrap items-end justify-center gap-x-2 gap-y-4 sm:gap-x-3 md:gap-x-4">
+              <div className="flex flex-wrap items-end justify-center gap-x-4 gap-y-4 sm:gap-x-6 md:gap-x-8">
                 {menuItems.map((item, i) => {
                   const isActive = i === activeIndex
                   return (
@@ -250,7 +250,7 @@ export function HeroSection() {
                             ? "text-xl text-foreground sm:text-2xl md:text-3xl -skew-x-3"
                             : "text-sm text-muted-foreground sm:text-base md:text-lg opacity-60 hover:opacity-90"
                         }`}
-                        style={isActive ? { textShadow: "2px 2px 0px var(--primary)" } : {}}
+                        style={isActive ? { textShadow: "1px 1px 0px var(--primary)" } : {}}
                       >
                         {item.label}
                       </span>
@@ -266,7 +266,7 @@ export function HeroSection() {
 
                       {/* Separador entre elementos */}
                       {i < menuItems.length - 1 && (
-                        <span className="absolute -right-1 bottom-1/2 translate-y-1/2 text-muted-foreground/30 sm:-right-1.5 md:-right-2 select-none pointer-events-none" aria-hidden>
+                        <span className="absolute -right-2 bottom-1/2 translate-y-1/2 text-muted-foreground/30 sm:-right-3 md:-right-4 select-none pointer-events-none" aria-hidden>
                           &#x2716;
                         </span>
                       )}
