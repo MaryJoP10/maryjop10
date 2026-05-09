@@ -18,7 +18,7 @@ const highlights = [
 
 export function AboutSection() {
   return (
-    <section id="about" className="relative min-h-screen py-24 overflow-hidden bg-background">
+    <section id="about" className="relative min-h-screen py-16 md:py-24 overflow-hidden bg-background">
       {/* Background decorations */}
       <div className="absolute inset-0">
         <motion.div
@@ -97,7 +97,7 @@ export function AboutSection() {
           >
             {/* Card container */}
             <div
-              className="relative bg-card/50 backdrop-blur-sm border border-border p-8"
+              className="relative bg-card/50 backdrop-blur-sm border border-border p-6 md:p-8"
               style={{ clipPath: "polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%)" }}
             >
               {/* Corner accent */}
@@ -158,7 +158,7 @@ export function AboutSection() {
             className="flex flex-col justify-center"
           >
             {/* Stats grid */}
-            <div className="grid grid-cols-3 gap-4 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
               {stats.map((stat, i) => (
                 <motion.div
                   key={stat.label}
@@ -166,10 +166,10 @@ export function AboutSection() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.5 + i * 0.1 }}
-                  className="relative group"
+                  className="relative group flex"
                 >
                   <div
-                    className="bg-secondary/80 border border-border p-6 text-center transition-all duration-300 group-hover:border-primary/50"
+                    className="flex-1 flex flex-col items-center justify-center bg-secondary/80 border border-border p-4 md:p-6 text-center transition-all duration-300 group-hover:border-primary/50"
                     style={{ clipPath: "polygon(0 8px, 8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%)" }}
                   >
                     <span
@@ -197,7 +197,7 @@ export function AboutSection() {
               className="relative"
             >
               <div
-                className="relative bg-linear-to-br from-primary/20 to-primary/5 border border-primary/30 p-8"
+                className="relative bg-linear-to-br from-primary/20 to-primary/5 border border-primary/30 p-6 md:p-8"
                 style={{ clipPath: "polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 30px 100%, 0 calc(100% - 30px))" }}
               >
                 <div className="flex items-center gap-4 mb-4">

@@ -80,7 +80,7 @@ export function ExperienceSection() {
   ]
 
   return (
-    <section id="experience" className="relative min-h-screen py-24 overflow-hidden bg-background">
+    <section id="experience" className="relative min-h-screen py-16 md:py-24 overflow-hidden bg-background">
       {/* Background */}
       <div className="absolute inset-0">
         <motion.div
@@ -200,7 +200,7 @@ export function ExperienceSection() {
                   transition={{ delay: i * 0.15 }}
                   className="group relative"
                 >
-                  <div className="flex gap-6">
+                  <div className="flex gap-4 md:gap-6">
                     {/* Timeline marker */}
                     <div className="hidden sm:flex flex-col items-center">
                       <div
@@ -216,13 +216,13 @@ export function ExperienceSection() {
 
                     {/* Content card */}
                     <div
-                      className="flex-1 bg-card/50 border border-border p-6 transition-all group-hover:border-primary/50"
+                      className="flex-1 bg-card/50 border border-border p-4 md:p-6 transition-all group-hover:border-primary/50"
                       style={{ clipPath: "polygon(0 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%)" }}
                     >
                       <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
                         <div>
                           <h3
-                            className="font-(--font-display) text-xl uppercase text-foreground group-hover:text-primary transition-colors"
+                            className="font-(--font-display) text-lg md:text-xl uppercase text-foreground group-hover:text-primary transition-colors"
                             style={{ transform: "skewX(-2deg)" }}
                           >
                             {exp.title}
@@ -275,7 +275,7 @@ export function ExperienceSection() {
                   transition={{ delay: i * 0.15 }}
                   className="group relative"
                 >
-                  <div className="flex gap-6">
+                  <div className="flex gap-4 md:gap-6">
                     {/* Timeline marker */}
                     <div className="hidden sm:flex flex-col items-center">
                       <div
@@ -291,13 +291,13 @@ export function ExperienceSection() {
 
                     {/* Content card */}
                     <div
-                      className="flex-1 bg-card/50 border border-border p-6 transition-all group-hover:border-primary/50"
+                      className="flex-1 bg-card/50 border border-border p-4 md:p-6 transition-all group-hover:border-primary/50"
                       style={{ clipPath: "polygon(0 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%)" }}
                     >
                       <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
                         <div>
                           <h3
-                            className="font-(--font-display) text-xl uppercase text-foreground group-hover:text-primary transition-colors"
+                            className="font-(--font-display) text-lg md:text-xl uppercase text-foreground group-hover:text-primary transition-colors"
                             style={{ transform: "skewX(-2deg)" }}
                           >
                             {edu.title}

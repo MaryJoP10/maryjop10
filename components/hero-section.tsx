@@ -37,7 +37,7 @@ export function HeroSection() {
     >
       {/* Fondo de cuadros */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Recuadros rojos arriba derecha */}
+        {/* Recuadros morados arriba derecha */}
         <motion.div
           initial={{ x: "100%" }}
           animate={{ x: 0 }}
@@ -75,7 +75,7 @@ export function HeroSection() {
           className="absolute left-[20%] top-0 h-full w-px bg-primary/10 origin-top"
           style={{ transform: "rotate(6deg)" }}
         />
-        {/* Diamantes rojos */}
+        {/* Diamantes morados */}
         <motion.div
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -215,7 +215,7 @@ export function HeroSection() {
               className="mt-12 md:mt-20"
               aria-label="Main menu"
             >
-              <div className="flex flex-wrap items-end justify-center gap-x-4 gap-y-4 sm:gap-x-6 md:gap-x-8">
+              <div className="flex flex-wrap items-end justify-center gap-x-4 gap-y-8 sm:gap-x-6 md:gap-x-8 px-4">
                 {menuItems.map((item, i) => {
                   const isActive = i === activeIndex
                   return (
@@ -226,7 +226,7 @@ export function HeroSection() {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.1 + i * 0.08, duration: 0.4 }}
                       onMouseEnter={() => setActiveIndex(i)}
-                      className={`group relative cursor-pointer px-2 py-1 transition-all duration-300 sm:px-3 -mt-4 mb-18 ${
+                      className={`group relative cursor-pointer px-2 py-1 transition-all duration-300 sm:px-3 ${
                         isActive ? "" : ""
                       }`}
                       onClick={(e) => {
@@ -250,7 +250,7 @@ export function HeroSection() {
                             ? "text-xl text-foreground sm:text-2xl md:text-3xl -skew-x-3"
                             : "text-sm text-muted-foreground sm:text-base md:text-lg opacity-60 hover:opacity-90"
                         }`}
-                        style={isActive ? { textShadow: "1px 1px 0px var(--primary)" } : {}}
+                        style={isActive ? { textShadow: "1px 1px 0px color-mix(in srgb, var(--primary), transparent 80%)" } : {}}
                       >
                         {item.label}
                       </span>
