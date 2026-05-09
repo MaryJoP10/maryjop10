@@ -250,7 +250,7 @@ export function HeroSection() {
                             ? "text-xl text-foreground sm:text-2xl md:text-3xl -skew-x-3"
                             : "text-sm text-muted-foreground sm:text-base md:text-lg opacity-60 hover:opacity-90"
                         }`}
-                        style={isActive ? { textShadow: "1px 1px 0px color-mix(in srgb, var(--primary), transparent 80%)" } : {}}
+                        style={isActive ? { textShadow: "2px 2px 0px color-mix(in srgb, var(--primary), transparent 80%)" } : {}}
                       >
                         {item.label}
                       </span>
