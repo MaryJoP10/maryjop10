@@ -26,7 +26,7 @@ const projects = [
     description:
       "Desarrollo de plataforma web orientada a networking y búsqueda de empleo, integrando autenticación, APIs REST y base de datos para gestión de usuarios y publicaciones.",
     tags: ["Next.js", "TypeScript", "Node.js","REST API", "Supabase", "SQL"],
-    image: "/images/Wanted.png",
+    image: "/images/WantedNew.png",
     liveUrl: "https://www.wantedcolombia.com/",
     githubUrl: "#",
     status: "Completado",
