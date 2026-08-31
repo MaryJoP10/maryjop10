@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { motion, AnimatePresence } from "framer-motion"
-import { useState } from "react"
-import Image from "next/image"
-import { ExternalLink, Github, ChevronLeft, ChevronRight } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import Image from "next/image";
+import { ExternalLink, Github, ChevronLeft, ChevronRight } from "lucide-react";
 
 const projects = [
   {
@@ -13,7 +13,13 @@ const projects = [
     description:
       "Portafolio interactivo inspirado en interfaces gaming, desarrollado para mostrar proyectos, habilidades y experiencia mediante una experiencia visual moderna y dinámica.",
     tags: ["Next.js", "TypeScript/JavaScript", "Framer Motion", "TailwindCSS"],
-    image: "/images/portfolio.png", // Asegúrate de que el archivo en public/images/ se llame así
+    images: [
+      {
+        src: "/images/portfolio.png",
+        alt: "Portafolio",
+        label: "Portafolio",
+      },
+    ], // Asegúrate de que el archivo en public/images/ se llame así
     liveUrl: "https://maryjop10.vercel.app/",
     githubUrl: "https://github.com/MaryJoP10/maryjop10",
     status: "Completado",
@@ -25,8 +31,14 @@ const projects = [
     category: "Full Stack",
     description:
       "Desarrollo de plataforma web orientada a networking y búsqueda de empleo, integrando autenticación, APIs REST y base de datos para gestión de usuarios y publicaciones.",
-    tags: ["Next.js", "TypeScript", "Node.js","REST API", "Supabase", "SQL"],
-    image: "/images/WantedNew.png",
+    tags: ["Next.js", "TypeScript", "Node.js", "REST API", "Supabase", "SQL"],
+    images: [
+      {
+        src: "/images/WantedNew.png",
+        alt: "Networking",
+        label: "Wanted Colombia",
+      },
+    ],
     liveUrl: "https://www.wantedcolombia.com/",
     githubUrl: "#",
     status: "Completado",
@@ -38,8 +50,14 @@ const projects = [
     category: "Data & Analytics & Mobile",
     description:
       "Aplicativo móvil orientado al análisis de inventario y control presupuestario mediante visualización y procesamiento de datos para optimizar recursos y apoyar la toma de decisiones.",
-    tags: ["Flutter", "Firebase", "Dart",],
-    image: "/images/Building.png",
+    tags: ["Flutter", "Firebase", "Dart"],
+    images: [
+      {
+        src: "/images/Building.png",
+        alt: "En desarrollo",
+        label: "Desarrollo",
+      },
+    ],
     liveUrl: "#",
     githubUrl: "#",
     status: "En desarrollo",
@@ -52,28 +70,96 @@ const projects = [
     description:
       "Aplicación móvil diseñada para apoyar a emprendedores mediante una experiencia visual e intuitiva para la gestión de ventas, inventario y cuentas. El proyecto está enfocado en accesibilidad y usabilidad, facilitando la interacción mediante interfaces simples y adaptadas.",
     tags: ["React Native", "Expo", "TypeScript", "Excel Sheets"],
-    image: "/images/Building.png",
+    images: [
+      {
+        src: "/images/Building.png",
+        alt: "En desarrollo",
+        label: "Desarrollo",
+      },
+    ],
     liveUrl: "#",
     githubUrl: "#",
     status: "En desarrollo",
     featured: true,
   },
-]
+  {
+    id: 5,
+    title: "Twitch Water Tracker",
+    category: "Full Stack",
+    description:
+      "Aplicación full-stack para streamers que conecta los canjes de puntos de Twitch con un sistema interactivo de seguimiento de agua y un overlay para OBS.",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Drizzle ORM",
+      "Twitch API",
+      "EventSub",
+      "OAuth",
+      "Vercel",
+    ],
+
+    images: [
+      {
+        src: "/images/twitch-dashboard.png",
+        alt: "Dashboard de Twitch Water Tracker",
+        label: "Dashboard",
+      },
+      {
+        src: "/images/twitch-overlay.png",
+        alt: "Overlay de OBS de Twitch Water Tracker",
+        label: "OBS Overlay",
+      },
+    ],
+
+    liveUrl: "#",
+    githubUrl: "https://github.com/MaryJoP10/twitch-water-tracker",
+    status: "Completado",
+    featured: true,
+  },
+];
 
 export function ProjectsSection() {
-  const [activeProject, setActiveProject] = useState(0)
-  const featuredProjects = projects.filter((p) => p.featured)
+  const [activeProject, setActiveProject] = useState(0);
+  const [activeImage, setActiveImage] = useState(0);
+  const featuredProjects = projects.filter((p) => p.featured);
 
   const nextProject = () => {
-    setActiveProject((prev) => (prev + 1) % featuredProjects.length)
-  }
+    setActiveProject((prev) => {
+      setActiveImage(0);
+      return (prev + 1) % featuredProjects.length;
+    });
+  };
 
   const prevProject = () => {
-    setActiveProject((prev) => (prev - 1 + featuredProjects.length) % featuredProjects.length)
-  }
+    setActiveProject((prev) => {
+      setActiveImage(0);
+      return (prev - 1 + featuredProjects.length) % featuredProjects.length;
+    });
+  };
+
+  const nextImage = () => {
+    const images = featuredProjects[activeProject].images;
+
+    setActiveImage((prev) => (prev + 1) % images.length);
+  };
+
+  const prevImage = () => {
+    const images = featuredProjects[activeProject].images;
+
+    setActiveImage((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  const currentProject = featuredProjects[activeProject];
+  const currentImages = currentProject.images;
+  const currentImage = currentImages[activeImage];
+  const hasMultipleImages = currentImages.length > 1;
 
   return (
-    <section id="projects" className="relative min-h-screen py-24 overflow-hidden bg-background">
+    <section
+      id="projects"
+      className="relative min-h-screen py-24 overflow-hidden bg-background"
+    >
       {/* Background */}
       <div className="absolute inset-0">
         <motion.div
@@ -171,7 +257,10 @@ export function ProjectsSection() {
                   <span
                     key={tag}
                     className="bg-secondary/80 px-3 py-1 font-mono text-xs uppercase text-foreground"
-                    style={{ clipPath: "polygon(4px 0, 100% 0, calc(100% - 4px) 100%, 0 100%)" }}
+                    style={{
+                      clipPath:
+                        "polygon(4px 0, 100% 0, calc(100% - 4px) 100%, 0 100%)",
+                    }}
                   >
                     {tag}
                   </span>
@@ -219,26 +308,72 @@ export function ProjectsSection() {
             >
               <div
                 className="relative aspect-video bg-card border border-border overflow-hidden"
-                style={{ clipPath: "polygon(0 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%)" }}
+                style={{
+                  clipPath:
+                    "polygon(0 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%)",
+                }}
               >
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeProject}
-            initial={{ opacity: 0, scale: 1.05 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ duration: 0.4 }}
-            className="absolute inset-0 h-full w-full"
-          >
-            <Image
-              src={featuredProjects[activeProject].image}
-              alt={featuredProjects[activeProject].title}
-              fill
-              className="object-cover"
-              priority
-            />
-          </motion.div>
-        </AnimatePresence>
+                <AnimatePresence mode="wait">
+                  {hasMultipleImages && (
+                    <>
+                      {/* Navegación vertical */}
+                      <div className="absolute right-4 top-1/2 z-20 flex -translate-y-1/2 flex-col gap-2">
+                        <button
+                          onClick={prevImage}
+                          aria-label="Imagen anterior"
+                          className="flex h-10 w-10 items-center justify-center border border-border bg-background/80 backdrop-blur-sm transition-all hover:border-primary"
+                        >
+                          <ChevronLeft className="h-4 w-4 rotate-90" />
+                        </button>
+
+                        <button
+                          onClick={nextImage}
+                          aria-label="Imagen siguiente"
+                          className="flex h-10 w-10 items-center justify-center bg-primary transition-transform hover:scale-105"
+                        >
+                          <ChevronRight className="h-4 w-4 rotate-90 text-primary-foreground" />
+                        </button>
+                      </div>
+
+                      {/* Indicadores verticales */}
+                      <div className="absolute left-4 top-1/2 z-20 flex -translate-y-1/2 flex-col gap-2">
+                        {currentImages.map((image, index) => (
+                          <button
+                            key={image.src}
+                            onClick={() => setActiveImage(index)}
+                            aria-label={`Ver ${image.label}`}
+                            className={`transition-all ${
+                              index === activeImage
+                                ? "h-8 w-2 bg-primary"
+                                : "h-2 w-2 bg-background/70 hover:bg-primary/60"
+                            }`}
+                          />
+                        ))}
+                      </div>
+
+                      {/* Nombre de la vista */}
+                      <div className="absolute bottom-4 left-4 z-20 bg-background/80 px-3 py-2 font-mono text-xs uppercase tracking-wider text-foreground backdrop-blur-sm">
+                        {currentImage.label}
+                      </div>
+                    </>
+                  )}
+                  <motion.div
+                    key={`${activeProject}-${activeImage}`}
+                    initial={{ opacity: 0, scale: 1.05 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 0.4 }}
+                    className="absolute inset-0 h-full w-full"
+                  >
+                    <Image
+                      src={currentImage.src}
+                      alt={currentImage.alt}
+                      fill
+                      className="object-cover"
+                      priority
+                    />
+                  </motion.div>
+                </AnimatePresence>
 
                 {/* Corner accents */}
                 <div className="absolute top-4 left-4 h-6 w-6 border-l-2 border-t-2 border-primary/40" />
@@ -250,14 +385,20 @@ export function ProjectsSection() {
                 <button
                   onClick={prevProject}
                   className="h-12 w-12 bg-secondary border border-border flex items-center justify-center transition-all hover:border-primary hover:bg-secondary/80"
-                  style={{ clipPath: "polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%)" }}
+                  style={{
+                    clipPath:
+                      "polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%)",
+                  }}
                 >
                   <ChevronLeft className="h-5 w-5 text-foreground" />
                 </button>
                 <button
                   onClick={nextProject}
                   className="h-12 w-12 bg-primary flex items-center justify-center transition-transform hover:scale-105"
-                  style={{ clipPath: "polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%)" }}
+                  style={{
+                    clipPath:
+                      "polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%)",
+                  }}
                 >
                   <ChevronRight className="h-5 w-5 text-primary-foreground" />
                 </button>
@@ -266,7 +407,10 @@ export function ProjectsSection() {
               {/* Decorative shadow */}
               <div
                 className="absolute -bottom-3 -right-3 w-full h-full border border-primary/20 -z-10"
-                style={{ clipPath: "polygon(0 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%)" }}
+                style={{
+                  clipPath:
+                    "polygon(0 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%)",
+                }}
               />
             </motion.div>
           </div>
@@ -280,7 +424,10 @@ export function ProjectsSection() {
                 className={`h-2 transition-all ${
                   i === activeProject ? "w-8 bg-primary" : "w-2 bg-secondary"
                 }`}
-                style={{ clipPath: "polygon(2px 0, 100% 0, calc(100% - 2px) 100%, 0 100%)" }}
+                style={{
+                  clipPath:
+                    "polygon(2px 0, 100% 0, calc(100% - 2px) 100%, 0 100%)",
+                }}
               />
             ))}
           </div>
@@ -293,7 +440,10 @@ export function ProjectsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <h3 className="font-(--font-display) text-xl uppercase text-foreground mb-6" style={{ transform: "skewX(-2deg)" }}>
+          <h3
+            className="font-(--font-display) text-xl uppercase text-foreground mb-6"
+            style={{ transform: "skewX(-2deg)" }}
+          >
             Otros Proyectos
           </h3>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -305,7 +455,10 @@ export function ProjectsSection() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
                 className="group relative bg-card/50 border border-border p-6 transition-all hover:border-primary/50"
-                style={{ clipPath: "polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%)" }}
+                style={{
+                  clipPath:
+                    "polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%)",
+                }}
               >
                 <span className="font-mono text-xs text-primary mb-2 block">
                   [{String(i + 1).padStart(2, "0")}] // {project.status}
@@ -320,10 +473,16 @@ export function ProjectsSection() {
                   {project.description}
                 </p>
                 <div className="mt-4 flex gap-3">
-                  <a href={project.liveUrl} className="text-muted-foreground hover:text-primary transition-colors">
+                  <a
+                    href={project.liveUrl}
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
                     <ExternalLink className="h-4 w-4" />
                   </a>
-                  <a href={project.githubUrl} className="text-muted-foreground hover:text-primary transition-colors">
+                  <a
+                    href={project.githubUrl}
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
                     <Github className="h-4 w-4" />
                   </a>
                 </div>
@@ -339,5 +498,5 @@ export function ProjectsSection() {
       <div className="absolute top-6 left-6 h-8 w-8 border-l-2 border-t-2 border-primary/20" />
       <div className="absolute bottom-6 right-6 h-8 w-8 border-r-2 border-b-2 border-primary/20" />
     </section>
-  )
+  );
 }
