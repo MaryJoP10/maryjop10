@@ -46,21 +46,26 @@ const projects = [
   },
   {
     id: 3,
-    title: "Sistema de Análisis y Gestión Presupuestaria",
-    category: "Data & Analytics & Mobile",
+    title: "Relatos — Sistema de Gestión para Repostería",
+    category: "Gestión Empresarial & Análisis de Datos",
     description:
-      "Aplicativo móvil orientado al análisis de inventario y control presupuestario mediante visualización y procesamiento de datos para optimizar recursos y apoyar la toma de decisiones.",
-    tags: ["Flutter", "Firebase", "Dart"],
+      "Aplicación multiplataforma para gestionar inventario, producción, ventas y finanzas, incorporando indicadores para el análisis y la toma de decisiones.",
+    tags: ["Flutter", "Dart", "SQLite", "PWA", "Análisis de Datos",],
     images: [
       {
-        src: "/images/Building.png",
-        alt: "En desarrollo",
-        label: "Desarrollo",
+        src: "/images/Relatos.png",
+        alt: "Sistema de gestión para reposteria Relatos",
+        label: "Web",
+      },
+      {
+        src: "/images/Relatos_app.jpg",
+        alt: "Sistema de gestión para reposteria Relatos",
+        label: "Aplicación",
       },
     ],
-    liveUrl: "#",
-    githubUrl: "#",
-    status: "En desarrollo",
+    liveUrl: "https://relatos-inventario.vercel.app/",
+    githubUrl: "https://github.com/MaryJoP10/RelatosReposteria_Inventory",
+    status: "Completado",
     featured: true,
   },
   {
@@ -87,7 +92,7 @@ const projects = [
     title: "Twitch Water Tracker",
     category: "Full Stack",
     description:
-      "Aplicación full-stack para streamers que conecta los canjes de puntos de Twitch con un sistema interactivo de seguimiento de agua y un overlay para OBS.",
+      "Aplicación full-stack para streamers que conecta los canjes de puntos de Twitch con un sistema interactivo de seguimiento (en este caso de aguaº) y un overlay para OBS.",
     tags: [
       "Next.js",
       "TypeScript",
@@ -279,7 +284,7 @@ export function ProjectsSection() {
                     style={{ transform: "skewX(6deg)" }}
                   >
                     <ExternalLink className="h-4 w-4" />
-                    Ver Proyecto
+                    Ver Demo
                   </span>
                 </a>
                 <a
